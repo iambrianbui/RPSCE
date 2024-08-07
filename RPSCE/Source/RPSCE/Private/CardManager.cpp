@@ -51,7 +51,6 @@ void UCardManager::InitializeCardDeck()
 			CardDeck.Add(PlayingCard);
 		}
 	}
-
 }
 
 bool UCardManager::DrawCardFromDeck()
@@ -60,6 +59,16 @@ bool UCardManager::DrawCardFromDeck()
 	if (CardDeck.Num() <= 0) return false;
 
 	CardHand.Add(CardDeck.Pop(true));
+	OnCardDrawn.Broadcast();
 	return true;
+}
+
+void UCardManager::DrawForTurn()
+{
+	while (DrawCardFromDeck())
+	{
+		
+	}
+
 }
 

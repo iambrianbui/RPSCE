@@ -7,6 +7,7 @@
 #include "Components/ActorComponent.h"
 #include "CardManager.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnCardDrawn);
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class RPSCE_API UCardManager : public UActorComponent
@@ -32,6 +33,12 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	bool DrawCardFromDeck();
+
+	UFUNCTION(BlueprintCallable)
+	void DrawForTurn();
+
+	UPROPERTY(BlueprintAssignable, BlueprintReadWrite)
+	FOnCardDrawn OnCardDrawn;
 
 	UPROPERTY(BlueprintReadWrite)
 	TArray<UPlayingCard*> CardHand;
