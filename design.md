@@ -23,5 +23,5 @@ TArray of ModifierCards, maximum limit of 6 cards.
 ## Object Glossary
 ### PlayingCard
 UObject that can be either be ROCK, PAPER, or SCISSORS.
-ECardType CardType;  //  rock, paper, scissors
-bool bShouldShow = false;  //  is the card revealed?
+- ECardType CardType;  //  rock, paper, scissors
+- bool bShouldShow = false;  //  is the card revealed?
